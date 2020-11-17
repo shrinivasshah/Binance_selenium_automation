@@ -55,7 +55,7 @@ def apiCall():
                 action_chains = ActionChains(driver)
                 action_chains.double_click(input_Field).perform()
                 input_Field.send_keys(index_price)
-
+                driver.refresh()
             finally:
                 submit_button = driver.find_element_by_xpath(
                     '//*[@id="btnupdateRateEnginRate"]')
@@ -72,7 +72,7 @@ def apiCall():
                 submit_button.click()
 
                 if flag == 1:
-                    time.sleep(5)
+                    time.sleep(10)
                 if flag == 2:
                     print("exiting")
                     break
